@@ -1,15 +1,21 @@
-class Review:
-
-
-    def customer(self):
-        return self.customer
-
-    def restaurant(self):
-        return self.restaurant
-
-
 class Restaurant:
+    all_restaurants = []
 
+    def __init__(self, name):
+        self.name = name
+        self.reviews = []
+        Restaurant.all_restaurants.append(self)
+
+    def add_review(self, review):
+        self.reviews.append(review)
+
+    def average_star_rating(self):
+        total_ratings = sum(review.rating for review in self.reviews)
+        num_reviews = len(self.reviews)
+        if num_reviews > 0:
+            return total_ratings / num_reviews
+        else:
+            return 0
 
     def reviews(self):
         return self.reviews
@@ -19,18 +25,3 @@ class Restaurant:
         for review in self.reviews:
             customer_list.append(review.customer)
         return list(set(customer_list))
-
-
-class Customer:
-
-    def restaurants(self):
-        restaurant_list = []
-        for review in self.reviews:
-            restaurant_list.append(review.restaurant)
-        return list(set(restaurant_list))
-
-
-    def add_review(self, restaurant, rating):
-        review = Review(self, restaurant, rating)
-        self.reviews.append(review)
-        restaurant.add_review(review)
