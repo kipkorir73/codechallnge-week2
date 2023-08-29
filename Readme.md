@@ -21,11 +21,11 @@ The class represents a  customer who can write reviews for restaurants.
 
 
 ## REVIEW
-Initialize a review with information about the customer,restaurant, and rating.
-Return the rating of the review.
-Provide a  class method to access all review instances.
-Allow accessing the customer associated with review.
-Allow accessing the restaurant associated with review.
+1. Initialize a review with information about the customer,restaurant, and rating.
+2. Return the rating of the review.
+3. Provide a  class method to access all review instances.
+4. Allow accessing the customer associated with review.
+5. Allow accessing the restaurant associated with review.
 
 ## Support and contact details 
 To make a contribution to the code used or any suggestions you can click on the contact link and email me your suggestions.
